@@ -1,0 +1,6 @@
+ErrorDocument 404 /404.php
+
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule ^base/([^/]+)/?$ base.php?name=$1
+RewriteRule ^prototype/([^/]+)/?$ english.php?name=$1

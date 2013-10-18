@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Basebooking - test</title>
+<link href="/styles/fotorama.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+<link rel="stylesheet" type="text/css" href="styles/baseStyles.css" />
+<script type="text/javascript" src="js/api/openapi.js?32"></script>
+<script type="text/javascript" src="js/api/openapi.js?49"></script>
+<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.core.js"></script>
+<script type="text/javascript" src="js/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="js/fotorama.js"></script>
+<script type="text/javascript" src="js/baseConstructor.js"></script>
+
+
+<style> 
+  .roomInfo .equip_header{
+    font-weight: 600;
+    color: #123;
+    width: auto;
+    height:34px;
+    height: 40px;
+    font-size: 15px;
+    border-bottom:none;
+    cursor:pointer;
+  }
+
+  
+.roomInfo span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #CCC;
+  font-size: 15px;
+  padding-top: 30px;
+  height:52px;
+}
+
+.enlarge {
+  width: 92px;
+  float: right;
+  display: inline-block;
+  font-weight: 200;
+  color: #08C;
+}
+  
+  .roomInfo {
+    min-height: 40px;
+    float: left;
+    width: 100%;
+
+  }
+  .slideDown {
+    padding-left: 6px;
+    border-top:1px dotted #ccc;
+    display: none;
+  }
+
+#cond {
+  display: none;
+}
+
+#datepicker {
+  border-bottom:1px solid #d1d1d1;
+}
+
+#basebooking_path {
+  float: left;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #D1D1D1;
+  background-image: -webkit-linear-gradient(top, #FAFAFA, #F4F4F4);
+}
+
+#basebooking_path div {
+  float: left;
+  height: 20px;
+  padding-top: 11px;
+  padding-left: 50px;
+  font-size: 13px;
+}
+
+#basebooking_path div:first-child {
+  float: left;
+  height: 20px;
+  padding-top: 11px;
+  padding-left: 12px;
+  font-size: 13px;
+}
+
+.booking_message {
+  width: 636px;
+  
+  font-size:20px;
+  height:160px;
+  text-align:center;
+  padding:20px;
+  background-color:#fafafa;
+  padding-top:100px;
+  border-bottom:1px solid #d1d1d1;
+}
+
+.edit{
+  display:inline-block;
+  width:90%;
+  text-align:right;
+  color: #08C;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.editInfo {
+  width: 95%;
+  margin-top:7px;
+}
+
+.editConditions,.CanceleditConditions {
+  width: 98%;
+  margin-top: 8px;
+}
+
+.roomInfo span {
+  display: block;
+  width: 60px;
+  text-align: left;
+  font-size: 12px;
+  padding-top: 0px;
+  height: 20px;
+  float: left;
+}
+
+#inf textarea {
+  width: 164px;
+  min-height: 20px;
+  border: 1px dotted #AAA;
+  max-width: 164px;
+}
+
+.inputdes {
+  min-width:235px;
+  min-height:100px;
+}
+
+.middle {
+  width: 224px;
+  height: 30px;
+  padding-top: 11px;
+  text-align: center;
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+#cond input {
+  border: 1px solid #D1D1D1;
+  border-radius: 3px;
+  height: 16px;
+  width: 24px;
+  padding-left: 6px;
+}
+
+#cond div {
+  float: left;
+  margin-top: 0px;
+  min-width: 10px;
+  margin-left: 0px;
+  color: #333;
+}
+
+#cond .innerConditions {
+  float: left;
+  margin-top: 30px;
+  width: 630px;
+  margin-left: 23px;
+  color: #333;
+}
+
+.editRoom,.cancelRoomEdit {
+  width: 128px;
+  height: 32px;
+  padding-top: 8px;
+  float: left;
+  font-weight: 200;
+  font-size: 15px;
+  border-left: 1px solid #D1D1D1;
+  text-align: center;
+}
+.innerHeader {
+  float: left;
+  padding-left: 15px;
+  padding-top: 7px;
+  height: 33px;
+  width: 662px;
+}
+
+
+.roomInfo .innerHeader:hover,.editRoom:hover,.cancelRoomEdit:hover {
+    background-color:#eaeaea;
+    color:#111;
+}
+
+.roomInfo textarea {
+  width: 486px;
+  border: 1px dotted #CCC;
+}
+
+.roomInfo .space {
+  height: 11px;
+}
+#datepicker {
+  display: block;
+}
+
+.slideDown span {
+  width: 100%;
+  text-align: center;
+  padding-top: 35px;
+  height: 59px;
+  font-size: 15px;
+  font-weight: 200;
+  color: #123;
+}
+
+#float_menu {
+  position: fixed;
+  z-index: 10;
+  top: 30%;
+  left: 50%;
+  margin-left: -593px;
+  width: 114px;
+  background-color: #FAFAFA;
+  height: 138px;
+  padding: 0;
+  border: 1px dotted #CCC;
+  font-size: 14px;
+  color: #123;
+  font-weight: 200;
+  cursor: pointer;
+  text-shadow: 1px 1px white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#float_menu span {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: block;
+  border-left: 6px solid #FAFAFA;
+  -webkit-padding-start: 10px;
+  -moz-padding-start: 10px;
+  padding-start: 10px;
+}
+
+#float_menu span:hover {
+color: #08C;
+border-left: 6px solid #456;
+}
+
+#float_menu span.active {
+  border-left: 6px solid #08c;
+}
+.fotorama__frame {
+  background-color:#fafafa;
+}
+
+.exbutton {
+  position: relative;
+  margin-top: 5px;
+  margin-left: 649px;
+}
+.exbutton {
+  width: 11px;
+  height: 11px;
+  background-image: url(img/exbutton.png);
+  display: none;
+  position: absolute;
+  margin-left: 660px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+#exsch {
+  margin-left: 649px;
+}
+
+#exdial {
+  margin-left: 654px;
+  margin-top: 10px;
+}
+
+
+#sch_header {
+  height: 77px;
+}
+
+#basebooking_schedule,#basebooking_confirmation {
+  background-color:#fafafa;
+  float: left;
+  border-bottom:1px solid #d1d1d1;
+}
+
+.booked.owner a {
+  cursor:pointer;
+  text-shadow: 0px 1px white;
+}
+
+#dial1 {
+  width: 428px;
+  padding: 15px;
+  min-height: 140px;
+  border-right: 1px solid #D1D1D1;
+  float: left;
+}
+#dial1 table {
+  width: 100%;
+}
+
+#dial1 tr {
+  height: 32px;
+  width: 100%;
+  color: #222;
+  float: left;
+  padding-top: 7px;
+}
+
+#dial1 td:first-child {
+  font-weight: 600;
+  width: 129px;
+}
+
+#dial1 input {
+  border-radius: 3px;
+  width: 281px;
+}
+
+#dial1 span {
+  font-size: 15px;
+}
+
+.button.bookingButton {
+  height: 41px;
+  margin-top: 100px;
+  padding-top: 19px;
+  width: 200px;
+  margin-left: 5px;
+}
+
+#nextk,#prevk {
+  height: 280px;
+  width: 46px;
+  padding-left: 9px;
+}
+
+#dial2 {
+  width: 212px;
+  padding: 15px;
+  padding-left: 2px;
+  padding-right: 2px;
+  height: 140px;
+  float: left;
+  text-align: center;
+  font-size: 13pt;
+}
+
+#vk_auth {
+  margin-left: 6px;
+  margin-top: 14px;
+  float: left;
+}
+
+.attention {
+  width: 232px;
+  font-size: 13px;
+  font-weight: 200;
+  padding: 15px;
+  border: 7px solid #F6F6F6;
+}
+
+.nobooking {
+  width: 676px;
+ height: 152px;
+padding-top: 128px;
+  font-weight: 200;
+  font-size: 26px;
+  float: left;
+  text-align: center;
+}
+
+#box2 {
+  margin-left: 0;
+margin-top: 0;
+}
+
+.num {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+</style>
+<script type="text/javascript">
+var input = {};
+input.bookings = [];
+input.info = {};
+input.info.rooms = 4;
+
+var k = input.info['rooms'];
+function setBoxHeight () {
+  var main = (parseInt($("#main").css("height")) + 10 ) + "px";
+  console.log(main);
+  $("#box1").css("min-height",main);
+}
+
+$(window).load(function() {
+
+  window.page = new Base(input);
+  window.booking = new BookingEngine($("#booking_box"),input.schedules,input.bookings,input.info['idb'],input.owner,page.info['komn'],input.roomNames);
+  page.createInfo();
+  page.createPhotos();
+  page.createEquipment();
+  page.createNavigation();
+  if (page.owner) {
+      page.adminFeatures();
+  }
+
+  if (page.photos.length !== 0) {
+   
+    $('#fotorama').fotorama({
+      width: 676,
+      height: 224,
+      backgroundColor:  '#fafafa',
+      thumbsBackgroundColor: '#e1e1e1',
+    }).css("display","block").css("display","none");
+
+  } 
+  setBoxHeight();
+
+});
+
+
+
+
+</script>
+<script type="text/javascript" src="js/bookingEngine.js"></script>
+</head>
+<body>
+
+
+<div id="centered">
+
+
+<div class="space"></div>
+<div class="space"></div>
+  <div id="basename">
+    </div><br/>
+  <div class="topline">
+    <div class="ribbon">
+    </div>   
+    <div class="triangle-l"></div> 
+    <div class="triangle-r"></div>
+  </div>   
+
+  <div id="main"> 
+  <div id="box1">
+  
+  <div id="nobooking" class="errwrap" style="display:none">
+    <div class="err">
+      <span>Извините, но онлайн бронирование для данной пока не доступно.</span>
+    </div>
+  </div>
+   <div id="booking_box"></div>
+   <div id="fotorama"></div>
+   <div id="cond"></div>
+   <div id="equipment"></div>
+  
+  </div><!--box1 -->
+
+  <div id="box2">
+   <div id="inf">
+   
+  <div class="space"></div>
+ </div>
+  </div><!--box2 -->
+ </div><!--main-->
+
+ </div><!--centered-->
+ </body>
+ </html>

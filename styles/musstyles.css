@@ -1,0 +1,208 @@
+@charset "utf-8";
+/* CSS Admin */
+#box1{width:145px;height:auto;margin-top:3px;margin-left:15px;}
+#box2{width:790px;float:left;margin-left:0px;margin-top:7px;
+
+}
+
+body {
+  
+}
+
+.elemento, header1, table{float:left;}
+.elemento {height:auto;margin-left:7px;width:775px;
+border-top: 1px solid #fafafa;
+
+    }
+iframe {float:left;width:790px;height:390px;margin-left:10px;margin-top:-5px;}
+
+form {width:100%; margin:0 auto;float:left;display:block;}
+table { margin:0 auto;}
+.test { max-width:500px;margin:0 auto;}
+#datepicker {width:775px;}
+
+#head_buttons {
+  float:left; 
+  width:775px;
+  height:50px;
+  margin-left:7px;
+  margin-top:3px;
+  background:-webkit-linear-gradient(top,#f8f8f8,#f2f2f2); 
+  background:-moz-linear-gradient(top,#f8f8f8,#f2f2f2); 
+  background:-ms-linear-gradient(top,#f8f8f8,#f2f2f2); 
+  border: 1px solid #d1d1d1;
+  border-top-right-radius: 4px;
+}
+#button_1, #button_2, #button_3 {
+  float:left; 
+  cursor:pointer; 
+  text-align:center;
+  height:33px;
+  padding-top:17px;
+  border-right:1px solid #d1d1d1;
+}
+#button_3 {
+  border-right:none;
+}
+.two div {width:387px}
+.three div {width:257px}
+.two #button_2 {width:387px;border-right:none; }
+.three #button_3{width:259px}
+.active {
+  background:-webkit-linear-gradient(top,#fff,#fafafa);
+  background:-moz-linear-gradient(top,#fff,#fafafa);
+  background:-ms-linear-gradient(top,#fff,#fafafa); 
+}
+
+#button_1:hover, #button_2:hover, #button_3:hover {color:#08c;} 
+
+
+
+#el_2, #el_3 {display:none;min-height:80px;float:left;}
+#el_1 div:last-child, #el_2 div:last-child, #el_3 div:last-child {border-bottom: none;}
+#el_1, #el_2, #el_3, .elemento {width:775px}
+.element {height: 160px;}
+#err{dislay:none;}
+.base{margin-top:10px;height:60px;}
+#basename a{color:#000;}
+#basename a:hover{color:#08c;}
+
+
+.booking_odd{height:41px; width:775px;border-bottom:1px solid #d1d1d1;float:left;background-color:#fdfdfd;overflow:hidden;}
+.booking_even{height:41px; width:775px;border-bottom:1px solid #d1d1d1;background-color:#FAFAFA;float:left;overflow:hidden;}
+.booking_even table,.booking_odd table {float:left;width:394px;margin-left:0px;height:40px;}
+.booking_even table td,.booking_odd table td {width:100px;}
+.booking_even table td span,.booking_odd table td span {cursor:pointer;color:#A82A2A;display:block;}
+#main {min-height:230px;margin-left:0px;margin-top:20px;}
+.booking_even .nothing, .booking_odd .nothing {
+  font-size:16pt;
+  width:100%; 
+  text-align:center; 
+  margin-top:50px;
+  color:#555;
+  font-family: "HelveticaNeue-Light","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+  float:left;
+}
+.buttons {height:41px; min-width:129px; float:right; border-left:1px solid #d1d1d1}
+.buttons span {width:129px;height:37px; float:left;text-align:center;padding-top:4px;cursor:pointer}
+
+.delete, .accept, .notaccept, .done, .notcome {border-right:1px solid #d1d1d1;}
+.booking_even .contact:hover, .booking_even .accept:hover, .booking_even .notaccept:hover {background-color:#f6f6f6;}
+.booking_odd .contact:hover, .booking_odd .accept:hover, .booking_odd .notaccept:hover {background-color:#fafafa;}
+.notaccept, .delete, .done {color:#A82A2A}
+
+.booking_even table td .notcome, .booking_odd table td .notcome {color:#000;cursor:default}
+
+
+.s3 .booking_even {height:80px;}
+#sch {background-color:#fafafa;}
+#sch_header {width:765px;}
+.komn {width:130px}
+
+.binfo {display:block;min-width:360px;float:left;margin-left:20px;}
+.binfo table {width:280px;}
+.binfo table td {width:80px;}
+.binfoc1,.binfoc2,.binfoc3,.binfoc4 {min-width:60px;margin-left:10px;float:left; height:29px;padding-top:11px;}
+.binfoc1 {margin-left:0px;width:66px;}
+.contacts {float:left;height:20px;padding-top:12px;margin-top:41px;width:775px;}
+.status1,.status {
+  border-right:1px solid #d1d1d1;
+}
+
+
+
+
+
+.num {width:130px;}
+#book div {float:left;margin-top:5px;width:100%;height:25px;}
+#book div input {float:right;width:270px;margin-left:0}
+#exbutton {margin-left:760px;}
+.submit {float:left;width:468px;height:50px;}
+.submit span {float:left;margin-top:15px;text-align:center;width:100%;}
+.qtype {display:none}
+.confirmation {width:745px;height:41px; margin-top:-41px;float:left;}
+.confirmation div {width:745px;height:20px; margin-top:12px;float:left;text-align:center;}
+.confirmation span{color:#08c; cursor:pointer;}
+.approved {cursor:default;border-right:1px solid #d1d1d1}
+
+.notifications .booking_odd, .notifications .booking_even {
+  height:80px;
+  color:#444;
+
+}
+
+.notifications .timestamp {
+  float:right;
+  margin-top:10px;
+  margin-right:17px;
+  color:#666;
+  cursor:italic;
+}
+.note {
+  height:20px;padding-top:35px; width:755px;margin-left:33px;
+}
+
+.settings {height:33px;}
+.settings .header1 {margin-top:14px;}
+
+
+.settingsBlock {
+  width:100%;
+  float:left;
+  border-bottom: 1px solid #d1d1d1;
+  padding-top:15px;
+  border-top: 1px solid #fff;
+}
+
+.settingsBlock .setheader {
+  float:left;
+  width: 100%;
+  text-align: center;
+  font-size: 11pt;
+  padding-bottom:17px;
+  border-bottom:1px dashed #dfdfdf;
+  
+}
+
+.settingsBlock .descript {
+  width:49%;
+  float:left;
+  text-align:right;
+  padding-bottom:20px;
+  padding-top:10px;
+}
+
+.settingsBlock .inputs {
+  width:49%;
+  float:right;
+  text-align:left;
+  padding-bottom:20px;
+  padding-top:10px;
+}
+
+.settingsBlock .descript div , .settingsBlock .inputs div { 
+  float:left;
+  margin-top:10px;
+  width: 100%;
+
+}
+
+.settingsBlock .textinput {
+  height:25px;
+  border:1px solid #d1d1d1;
+  border-radius: 3px;
+}
+
+.saveSettings {
+  width:300px;
+  height:50px;
+  margin-left:240px;
+}
+.saveSettings span {
+  width:100%;
+  text-align:center;
+  margin-top:15px;
+  font-size:11pt;
+  float:left
+}
+
